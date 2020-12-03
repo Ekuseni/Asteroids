@@ -1,0 +1,328 @@
+fileFormatVersion: 2
+guid: 21c5c14f8af4a1441af0bee5559ecbf1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6042644174200083202
+    second: asteroids_spriteatlas_0
+  - first:
+      213: 2210425200420338032
+    second: asteroids_spriteatlas_1
+  - first:
+      213: 3662983829665754406
+    second: asteroids_spriteatlas_2
+  - first:
+      213: 4880832794192292544
+    second: asteroids_spriteatlas_3
+  - first:
+      213: 7190528736877224392
+    second: asteroids_spriteatlas_4
+  - first:
+      213: 647057725200335548
+    second: asteroids_spriteatlas_5
+  - first:
+      213: 7025099508354665551
+    second: asteroids_spriteatlas_6
+  - first:
+      213: 9051546154657219074
+    second: asteroids_spriteatlas_7
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: asteroids_spriteatlas_0
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 287
+        width: 189
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 60.5, y: 87}
+        - {x: 5.5, y: 58}
+        - {x: -39.5, y: 78}
+        - {x: -74.5, y: 40}
+        - {x: -91.5, y: -23}
+        - {x: -45.5, y: -76}
+        - {x: 8.5, y: -86}
+        - {x: 91.5, y: -27}
+        - {x: 78.5, y: 16}
+        - {x: 90.5, y: 58}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20397437cd8cbd350800000000000000
+      internalID: 6042644174200083202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asteroids_spriteatlas_1
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 330
+        width: 81
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07930a922020dae10800000000000000
+      internalID: 2210425200420338032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asteroids_spriteatlas_2
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 347
+        width: 106
+        height: 97
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62d2a31c26885d230800000000000000
+      internalID: 3662983829665754406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asteroids_spriteatlas_3
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 302
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0caa8e901933cb340800000000000000
+      internalID: 4880832794192292544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asteroids_spriteatlas_4
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 24
+        width: 171
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 9.5, y: 64}
+        - {x: -48.5, y: 77}
+        - {x: -81.5, y: 42}
+        - {x: -34.5, y: -5}
+        - {x: -51.5, y: -77}
+        - {x: -0.5, y: -87}
+        - {x: 82.5, y: -27}
+        - {x: 60.5, y: 18}
+        - {x: 79.5, y: 59}
+        - {x: 51.5, y: 86}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c12ec40ac3e9c360800000000000000
+      internalID: 7190528736877224392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asteroids_spriteatlas_5
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 38
+        width: 195
+        height: 166
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 33.5, y: 45}
+        - {x: 7.5, y: 79}
+        - {x: -47.5, y: 62}
+        - {x: -72.5, y: 20}
+        - {x: -93.5, y: -38}
+        - {x: -52.5, y: -80}
+        - {x: -3.5, y: -79}
+        - {x: 19.5, y: -36}
+        - {x: 93.5, y: -1}
+        - {x: 79.5, y: 58}
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb20db3a29fcaf800800000000000000
+      internalID: 647057725200335548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asteroids_spriteatlas_6
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 81
+        width: 130
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4c404348ca2e7160800000000000000
+      internalID: 7025099508354665551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asteroids_spriteatlas_7
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 98
+        width: 84
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2028560454d8d9d70800000000000000
+      internalID: 9051546154657219074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
