@@ -24,11 +24,20 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.2d.entities": {
-      "version": "0.29.0-preview.3",
+      "version": "0.31.0-preview.3",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.entities": "0.14.0-preview.18"
+        "com.unity.entities": "0.16.0-preview.21"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.2d.entities.physics": {
+      "version": "0.1.0-preview.3",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.entities": "0.16.0-preview.21"
       },
       "url": "https://packages.unity.com"
     },

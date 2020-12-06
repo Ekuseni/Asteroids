@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
                 Entity spawnedEntity = entityManager.Instantiate(asteroidEntity);
 
                 entityManager.SetComponentData(spawnedEntity, new Translation { Value = new float3(x * 5, y * 5, 0) });
-                entityManager.SetComponentData(spawnedEntity, new PhysicsVelocity{ Linear = new float2(UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(-1f, 1f)) });
+                //entityManager.SetComponentData(spawnedEntity, new PhysicsVelocity{ Linear = new float2(UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(-1f, 1f)), Angular = UnityEngine.Random.Range(-1f, 1f) });
             }
         }
     }

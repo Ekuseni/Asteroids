@@ -1,26 +1,30 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Unity.Burst;
+using Unity.Collections;
 using Unity.Entities;
-using UnityEngine;
-using Unity.U2D.Entities.Physics;
+using Unity.Jobs;
+using Unity.Mathematics;
 using Unity.Transforms;
+using Unity.U2D.Entities.Physics;
+using UnityEngine;
 
-public class AsteroidCollideSystem : ComponentSystem
+public class AsteroidCollision : SystemBase
 {
     protected override void OnUpdate()
     {
         var physicsWorldSystem = World.GetExistingSystem<PhysicsWorldSystem>();
         var physicsWorld = physicsWorldSystem.PhysicsWorld;
 
-        var didExplode = false;
 
-        Entities
-            .ForEach((
+
+        Entities.WithAll<Asteroid>().ForEach((
                 Entity missileEntity,
                 ref PhysicsColliderBlob collider,
                 ref Translation tr,
                 ref Rotation rot) =>
             {
+
+                Debug.Log("Check: " + missileEntity.ToString());
+
                 if (physicsWorld.OverlapCollider(
                     new OverlapColliderInput
                     {
@@ -32,18 +36,12 @@ public class AsteroidCollideSystem : ComponentSystem
                 {
                     var asteroidEntity = physicsWorld.AllBodies[hit.PhysicsBodyIndex].Entity;
 
-                    PostUpdateCommands.DestroyEntity(asteroidEntity);
-                    PostUpdateCommands.DestroyEntity(missileEntity);
-
-                    didExplode = true;
+                    Debug.Log("Hit:" + asteroidEntity.ToString());
                 }
-            });
+            }).Run();
 
-        if (didExplode)
-        {
-           
-        }
+        
     }
+    
 }
 
-    
