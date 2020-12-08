@@ -17,6 +17,8 @@ public class PooledObject : MonoBehaviour {
 	public void ReturnToPool () {
 		if (Pool) {
 			Pool.AddObject(this);
+			this.transform.position = Vector3.zero;
+			this.transform.SetParent(Pool.transform);
 		}
 		else {
 			Debug.Log("I die!");

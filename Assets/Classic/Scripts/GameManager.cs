@@ -1,11 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
+using System.Collections;
 using UnityEngine;
-using UnityEngine.Jobs;
-using Unity.Mathematics;
-using Unity.Jobs;
-using Unity.Collections;
-using Unity.Burst;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,53 +9,116 @@ public class GameManager : MonoBehaviour
     private Asteroid asteroidPrefab;
     [SerializeField]
     private Vector2Int gridSize;
-    // Start is called before the first frame update
+    [SerializeField]
+    static float spawnDistance = 5f;
 
     [SerializeField]
-    private static float spawnDistance = 5f;
+    private GameObject shipPrefab;
 
-    private static Bounds bounds;
+    [SerializeField]
+    private Transform asteroidContainer;
+    public static Transform AsteroidContainer { get { return _instance.asteroidContainer; } }
+    [SerializeField]
+    private Transform bulletContainer;
+    public static Transform BulletContainer { get { return _instance.bulletContainer; } }
 
-    private static List<Asteroid> asteroids = new List<Asteroid>();
 
-    //NativeArray<float3> displacementArray;
-    //NativeArray<float3> positions;
-    //TransformAccessArray transformAccessArray;
+    [SerializeField]
+    UnityEvent restartGameEvents;
+    WaitForSeconds second = new WaitForSeconds(1f);
 
-    //public static void AddAsteroidToList(Asteroid asteroid)
-    //{
-    //    asteroids.Add(asteroid);
-    //}
+    
 
-    //public static void RemoveAsteroidFromList(Asteroid asteroid)
-    //{
-    //    asteroids.Remove(asteroid);
-    //}
+    public static Bounds bounds;
+    static Bounds cameraBounds;
+    static GameManager _instance;
+
+    
 
     void Start()
     {
+        _instance = this;
+
+
+        Instantiate(shipPrefab, transform);
+
         bounds = new Bounds(Vector2.zero, new Vector2(gridSize.x * spawnDistance, gridSize.y * spawnDistance));
-        //ObjectPool.Preload(asteroidPrefab, Mathf.CeilToInt(gridSize.x * gridSize.y * 1.1f));
+        cameraBounds = new Bounds(Vector2.zero, new Vector2(Camera.main.orthographicSize * Camera.main.aspect, Camera.main.orthographicSize) * 2.25f);
 
         for (int x = 0; x < gridSize.x; x++)
         {
             for (int y = 0; y < gridSize.y; y++)
             {
-                Asteroid newAsteroid = asteroidPrefab.GetPooledInstance<Asteroid>();
+                Transform temp = asteroidPrefab.GetPooledInstance<Asteroid>().transform;
 
-                asteroids.Add(newAsteroid);
-                asteroids[asteroids.Count - 1].transform.position = new Vector3(bounds.min.x + x * spawnDistance + spawnDistance / 2, bounds.min.y + y * spawnDistance + spawnDistance / 2, 0);
+                temp.SetParent(asteroidContainer);
+                temp.position = new Vector3(bounds.min.x + x * spawnDistance + spawnDistance / 2, bounds.min.y + y * spawnDistance + spawnDistance / 2, 0);
             }
         }
-
-
     }
 
-    
-
-    private void Update()
+    public static void ResetWorld()
     {
+        Vector3 offset = new Vector3 (AsteroidContainer.transform.position.x, AsteroidContainer.transform.position.y, 0f);
+        AsteroidContainer.transform.position = Vector2.zero;
+        foreach (Transform asteroid in AsteroidContainer.transform)
+        {
+            asteroid.localPosition = asteroid.localPosition + offset;
+        }
+    }
+
+    System.Random random = new System.Random(42);
+
+    private static Vector2 RandomSpawnPos()
+    {
+        float x;
+        float y;
+        Vector2 returnVector;
         
+        do
+        {
+            x = _instance.random.Next(Mathf.FloorToInt(bounds.min.x) * 10, Mathf.CeilToInt(bounds.max.x) * 10) / 10f;
+            y = _instance.random.Next(Mathf.FloorToInt(bounds.min.x) * 10, Mathf.CeilToInt(bounds.max.x) * 10) / 10f;
+
+            returnVector = new Vector2(x, y);
+        } while (cameraBounds.Contains(returnVector));
+
+        return returnVector;
+    }
+
+    public void StartGame()
+    {
+        Ship.EnableShip();
+        ResetWorld();
+        Score.ResetScore();
+    }
+
+    public static void EndGame()
+    {
+        foreach (Bullet bullet in BulletContainer.GetComponentsInChildren<Bullet>())
+        {
+            bullet.ReturnToPool();
+        }
+        _instance.restartGameEvents?.Invoke();
+    }
+
+    public static void SpawnNewAsteroid()
+    {
+        _instance.StartSpawnCoroutine();
+    }
+
+    private void StartSpawnCoroutine()
+    {
+        StartCoroutine("SpawnAfterWait");
+    }
+
+    IEnumerator SpawnAfterWait()
+    {
+        yield return second;
+
+        Transform temp = _instance.asteroidPrefab.GetPooledInstance<Asteroid>().transform;
+        temp.SetParent(asteroidContainer);
+        temp.position = RandomSpawnPos();
     }
 }
 
