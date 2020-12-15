@@ -67,7 +67,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    System.Random random = new System.Random(42);
+    public static System.Random random = new System.Random(42);
 
     private static Vector2 RandomSpawnPos()
     {
@@ -77,14 +77,30 @@ public class GameManager : MonoBehaviour
         
         do
         {
-            x = _instance.random.Next(Mathf.FloorToInt(bounds.min.x) * 10, Mathf.CeilToInt(bounds.max.x) * 10) / 10f;
-            y = _instance.random.Next(Mathf.FloorToInt(bounds.min.x) * 10, Mathf.CeilToInt(bounds.max.x) * 10) / 10f;
+            x = random.Next(Mathf.FloorToInt(bounds.min.x) * 10, Mathf.CeilToInt(bounds.max.x) * 10) / 10f;
+            y = random.Next(Mathf.FloorToInt(bounds.min.x) * 10, Mathf.CeilToInt(bounds.max.x) * 10) / 10f;
 
             returnVector = new Vector2(x, y);
         } while (cameraBounds.Contains(returnVector));
 
         return returnVector;
     }
+
+    //private void Update()
+    //{
+    //    SpriteRenderer[] spriteRenderers = asteroidContainer.GetComponentsInChildren<SpriteRenderer>();
+
+    //    for(int i = 0; i < spriteRenderers.Length; i++)
+    //    {
+    //        for(int j = i + 1; j < spriteRenderers.Length; j++)
+    //        {
+    //            if (spriteRenderers[i].bounds.Intersects(spriteRenderers[j].bounds))
+    //            {
+    //                spriteRenderers[i].color = Color.red;
+    //            }
+    //        }
+    //    }
+    //}
 
     public void StartGame()
     {

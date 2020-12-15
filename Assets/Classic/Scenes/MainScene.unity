@@ -349,7 +349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   asteroidPrefab: {fileID: 3976482155966799539, guid: 3f9b2050c0e6f3f4a9d3ec6fb5867ed1, type: 3}
-  gridSize: {x: 50, y: 50}
+  gridSize: {x: 160, y: 160}
   shipPrefab: {fileID: 883701846241239115, guid: ee6940ca58a27234badad1e1f30e51e3, type: 3}
   asteroidContainer: {fileID: 1996194288}
   bulletContainer: {fileID: 46001145}
